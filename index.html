@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mansões de Luxo - Zona da Mata</title>
+  <style>
+    :root {
+      --background: #000;
+      --primary: #0B4F91;
+      --accent: #FFD700;
+      --text-light: #fff;
+      --text-dark: #000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--background);
+      color: var(--text-light);
+    }
+
+    header {
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: var(--text-light);
+      text-shadow: 2px 2px 5px var(--text-dark);
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: var(--accent);
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: var(--accent);
+      border: none;
+      color: var(--text-dark);
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e6c200;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about, .features, .video, .location, .contact {
+      background-color: var(--primary);
+      border-radius: 10px;
+      margin-bottom: 30px;
+      padding: 30px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .features ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .features li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background-color: var(--accent);
+      color: var(--text-dark);
+      padding: 12px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <div class="hero-text">
+      <h1>Mansões de Luxo na Natureza</h1>
+      <p>Inspiradas no conceito único de Inhotim</p>
+      <button class="btn">Agende sua visita</button>
+    </div>
+  </header>
+
+  <!-- Sobre o Projeto -->
+  <section class="about">
+    <h2 class="section-title">Sobre o Projeto</h2>
+    <p>
+      Inspirada nos jardins de arte a céu aberto de Inhotim, esta residência se funde com a paisagem natural da Zona da Mata Mineira.
+      Projetos assinados por arquitetos renomados, feitos para quem busca conforto, privacidade e elegância em meio ao verde.
+    </p>
+  </section>
+
+  <!-- Destaques -->
+  <section class="features">
+    <h2 class="section-title">Principais Características</h2>
+    <ul>
+      <li>Área gourmet separada</li>
+      <li>Piscina com borda infinita com vista para o lago</li>
+      <li>Arquitetura moderna, linear e clean</li>
+      <li>Urbanização leve e planejada</li>
+      <li>Acesso rápido a BH e outras cidades</li>
+    </ul>
+  </section>
+
+  <!-- Vídeo Drone -->
+  <section class="video">
+    <h2 class="section-title">Veja o Conforto Entre Arte e Natureza</h2>
+    <!-- Substitua pela URL do seu vídeo no YouTube ou Vimeo -->
+    <iframe src="https://www.youtube.com/embed/seu-video-id" allowfullscreen></iframe>
+  </section>
+
+  <!-- Localização -->
+  <section class="location">
+    <h2 class="section-title">Localização</h2>
+    <p>
+      Situada na Zona da Mata Mineira, região privilegiada com terrenos ondulados, bem vegetados,
+      com restos da mata atlântica original e urbanização leve, mas já estruturada.
+    </p>
+    <!-- Mapa do Google Maps -->
+    <iframe src="https://www.google.com/maps?q=zona+da+mata+minas+gerais&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- Contato -->
+  <section class="contact">
+    <h2 class="section-title">Quero mais informações</h2>
+    <form action="#" method="post">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="tel" name="telefone" placeholder="Telefone" required />
+      <input type="email" name="email" placeholder="E-mail" required />
+      <textarea name="mensagem" rows="4" placeholder="Mensagem (opcional)"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</body>
+</html>
