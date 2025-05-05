@@ -3,31 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Mansões de luxo na Zona da Mata Mineira. Inspiração Inhotim. Arquitetura moderna e natureza integradas.">
   <title>Mansões de Luxo - Zona da Mata</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --background: #000;
-      --primary: #0B4F91;
+      --bg-main: #000;
+      --bg-secondary: #0B4F91;
       --accent: #FFD700;
       --text-light: #fff;
+      --text-gray: #ccc;
       --text-dark: #000;
+      --transition: all 0.3s ease-in-out;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--background);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-main);
       color: var(--text-light);
+      line-height: 1.6;
     }
 
     header {
-      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      position: relative;
       height: 100vh;
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      position: relative;
     }
 
     header::after {
@@ -35,13 +43,14 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.65);
       z-index: 1;
     }
 
     .hero-text {
       position: relative;
       z-index: 2;
+      max-width: 800px;
       padding: 20px;
     }
 
@@ -58,7 +67,7 @@
     }
 
     .btn {
-      margin-top: 20px;
+      margin-top: 30px;
       padding: 15px 30px;
       background-color: var(--accent);
       border: none;
@@ -67,7 +76,7 @@
       cursor: pointer;
       font-size: 1rem;
       border-radius: 5px;
-      transition: background 0.3s ease;
+      transition: var(--transition);
     }
 
     .btn:hover {
@@ -75,33 +84,44 @@
     }
 
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
+      animation: fadeInUp 1s ease-in-out;
     }
 
-    .about, .features, .video, .location, .contact {
-      background-color: var(--primary);
-      border-radius: 10px;
-      margin-bottom: 30px;
-      padding: 30px;
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
       color: var(--accent);
+      text-align: center;
+    }
+
+    .about p,
+    .location p {
+      max-width: 800px;
+      margin: auto;
       text-align: center;
     }
 
     .features ul {
       list-style: none;
       padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
 
     .features li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 15px;
+      border-left: 3px solid var(--accent);
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 5px;
     }
 
     iframe {
@@ -109,6 +129,7 @@
       height: 500px;
       border: none;
       border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
     form input, form textarea {
@@ -118,6 +139,8 @@
       border: none;
       border-radius: 5px;
       font-size: 1rem;
+      background-color: #111;
+      color: var(--text-light);
     }
 
     form button {
@@ -129,11 +152,28 @@
       border-radius: 5px;
       cursor: pointer;
       font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    form button:hover {
+      background-color: #e6c200;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: var(--bg-secondary);
+      color: var(--text-gray);
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
       .hero-text h1 {
         font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -171,9 +211,9 @@
   </section>
 
   <!-- Vídeo Drone -->
-  <section class="video">
+  <section>
     <h2 class="section-title">Veja o Conforto Entre Arte e Natureza</h2>
-    <!-- Substitua pela URL do seu vídeo no YouTube ou Vimeo -->
+    <!-- Substitua pela URL do seu vídeo no YouTube -->
     <iframe src="https://www.youtube.com/embed/seu-video-id" allowfullscreen></iframe>
   </section>
 
@@ -189,7 +229,7 @@
   </section>
 
   <!-- Contato -->
-  <section class="contact">
+  <section>
     <h2 class="section-title">Quero mais informações</h2>
     <form action="#" method="post">
       <input type="text" name="nome" placeholder="Seu nome" required />
@@ -199,6 +239,11 @@
       <button type="submit">Enviar</button>
     </form>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Mansões de Luxo - Todos os direitos reservados
+  </footer>
 
 </body>
 </html>
